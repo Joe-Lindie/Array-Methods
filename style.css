@@ -1,0 +1,33 @@
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border: 0.5px solid gray;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-input {
+  display: flex;
+}
+
+.user-input input {
+  margin-left: 10px;
+}
+
+.function {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+button,
+.user-input input {
+  cursor: pointer;
+}
