@@ -1,48 +1,41 @@
 const inputBtn = document.getElementById("btn");
 const myText = document.getElementById("myText");
 const answer = document.getElementById("answer");
-const evenNumsRadioBtn = document.getElementById("evenNums")
-const totalNumsRadioBtn = document.getElementById("totalNums")
-
+const evenNumsRadioBtn = document.getElementById("evenNums");
+const totalNumsRadioBtn = document.getElementById("totalNums");
 
 function evenNums(value) {
-   return value %2 === 0
- }
-
- function doFilter(arr) {
-   return arr.map(Number).filter(evenNums) //use number a function 
-
- }
-
-function doSum(arr){
-   const newNumbers = arr.map(Number); 
-   return newNumbers.reduce(addNumbers);
-  
+  return value % 2 === 0;
 }
 
- function addNumbers(total, num) {
-   return total + num;
+function doFilter(arr) {
+  return arr.map(Number).filter(evenNums); //use number a function
 }
 
+function doSum(arr) {
+  const newNumbers = arr.map(Number);
+  return newNumbers.reduce(addNumbers);
+}
 
- inputBtn.addEventListener('click', function(){
-   let result   
- const inputArr = myText.value.split( ',')
-   if (evenNumsRadioBtn.checked) {
+function addNumbers(total, num) {
+  return total + num;
+}
 
-       result = doFilter(inputArr).join(", ")
+inputBtn.addEventListener("click", function () {
+  let result;
+  const inputArr = myText.value.split(",");
+  //console.log(inputArr);
+  if (evenNumsRadioBtn.checked) {
+    result = doFilter(inputArr).join(", ");
 
-      answer.textContent = result
-      
-   } else if (totalNumsRadioBtn.checked) {
+    answer.textContent = result;
+  } else if (totalNumsRadioBtn.checked) {
+    result = doSum(inputArr);
 
-       result = doSum(inputArr)
+    answer.textContent = result;
+  } else {
+    alert("Please make a selection");
+  }
+});
 
-      answer.textContent = result
-
-   } else {
-      alert ('Please make a selection')
-   }
- })
- 
-// line 35 / 41 need to be on one line /// 
+// line 35 / 41 need to be on one line ///
